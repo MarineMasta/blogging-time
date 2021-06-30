@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- header -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technically Speaking</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <title>Tech Blog</title>
+</head>
+
+  <div class="wrapper">
+    <header>
+      <!--Header with nav, content differs if logged in or out-->
+        <h1 class="">Marine's Tech Blog</h1>
+        <nav class="navbar">
+            {{#if loggedIn}}
+            <a href="/" class="navbar-item is-hoverable pt-1">Home</a>
+            <a href="/dashboard" class="navbar-item is-hoverable pt-1">Dash</a>
+            <a href="/dashboard/create/" class="navbar-item is-hoverable pt-1 mr-4">Write A Post</a>
+            <button id="logout" class="button is-danger">Log Off</button>
+            {{else}}
+            <a href="/" class="navbar-item is-hoverable pt-1">Home</a>
+            <a href="/login" class="button is-primary">Log In</a>
+            {{/if}}
+        </nav>
+    </header>
+  <!--body filled with content via handlebar-->
+    <main>
+            {{{ body }}}
+    </main>
+
+    <!--footer with similar nav options as above-->
+    <footer class="footer rows">
+        <div class="row-is-full content has-text-centered">
+            <p>
+            <a href="/">Home</a>{{#if loggedIn}} | 
+            <a href="/dashboard/">Dash</a> | 
+            <a href="/dashboard/create/">Write A Post</a>
+            {{else}}
+             | <a href="/login/">login</a>
+            {{/if}}
+            </p>
+        </div>
+    </footer>
+  </div>
+
+{{#if loggedIn}}
+<script src="/javascript/logout.js"></script>
+{{/if}}
+</body>
+
+</html>
