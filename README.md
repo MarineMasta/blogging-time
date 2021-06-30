@@ -3,7 +3,6 @@
 
 ### Application Deployment
 
-https://mvc-tech-blog.herokuapp.com/
 
 ### Application Screenshot
 
